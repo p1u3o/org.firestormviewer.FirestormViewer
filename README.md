@@ -19,5 +19,8 @@ $HOME is forbidden, however $XDG_DOCUMENTS, $XDG_DOWNLOAD, $XDG_PICTURES etc are
 
 Gotta keep that home directory squeaky clean :D. A potential alternative to this is use portals.
 
-Additionally, this does not build the viewer. Integrating Flatpak into the build process of the viewer is a lot more additional work but at least we can experiment with how Firestorm handles being inside modern Linux sandbox, and kill the dependency issues that plague the Linux version of the viewer.
+This does not build the viewer. Integrating Flatpak into the build process of the viewer is a lot more additional work but at least we can experiment with how Firestorm handles being inside modern Linux sandbox and kill the dependency issues that plague the Linux version of the viewer.
 
+GNOME can now also monitor and manage our flatpak too.
+
+![](https://i.imgur.com/3Bs7HOu.png)
