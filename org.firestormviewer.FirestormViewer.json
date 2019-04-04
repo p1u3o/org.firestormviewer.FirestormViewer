@@ -36,14 +36,14 @@
       "sources": [
         {
         "type": "file",
-        "only-arches": "x86_64",
+        "only-arches": ["x86_64"],
         "dest-filename": "viewer.tar.xz",
         "url": "http://downloads.firestormviewer.org/linux/Phoenix_FirestormOS-Releasex64_x86_64_6.0.2.56680.tar.xz",
         "md5": "c11857b11dbb4a4accfc785529d63451"
         },
         {
 	"type": "file",
-        "only-arches": "i386",
+        "only-arches": ["i386"],
         "dest-filename": "viewer.tar.xz",
         "url": "http://downloads.firestormviewer.org/linux/Phoenix_FirestormOS-Release_i686_6.0.2.56680.tar.xz",
         "md5": "9e20172f32789f68671c0be8bcdd8315"
