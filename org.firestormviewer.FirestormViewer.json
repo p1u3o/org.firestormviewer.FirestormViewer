@@ -25,19 +25,28 @@
     "/share/man",
     "/share/doc",
     "/share/gtk-doc",
-    "/lib/pkgconfig"
+    "/lib/pkgconfig",
+    "/lib/debug"
   ],
   "modules": [
     {
       "name": "firestormviewer",
       "buildsystem": "simple",
-      "cleanup": "Phoenix_FirestormOS-Releasex64_x86_64_6.0.2.56680.tar.xz",
+      "cleanup": "viewer.tar.xz",
       "sources": [
         {
         "type": "file",
         "only-arches": "x86_64",
+        "dest-filename": "viewer.tar.xz",
         "url": "http://downloads.firestormviewer.org/linux/Phoenix_FirestormOS-Releasex64_x86_64_6.0.2.56680.tar.xz",
         "md5": "c11857b11dbb4a4accfc785529d63451"
+        },
+        {
+	"type": "file",
+        "only-arches": "i386",
+        "dest-filename": "viewer.tar.xz",
+        "url": "http://downloads.firestormviewer.org/linux/Phoenix_FirestormOS-Release_i686_6.0.2.56680.tar.xz",
+        "md5": "9e20172f32789f68671c0be8bcdd8315"
         },
         {
           "type": "script",
@@ -50,7 +59,7 @@
       "build-commands": [
         "mkdir -p /app/lib/i386-linux-gnu /app/lib/debug/lib/i386-linux-gnu",
         "install -d /app/firestorm",
-        "tar -xvf Phoenix_FirestormOS-Releasex64_x86_64_6.0.2.56680.tar.xz --strip 1 -C /app/firestorm",
+        "tar -xvf viewer.tar.xz --strip 1 -C /app/firestorm",
         "install -d /app/bin",
         "install firestorm-viewer /app/bin/",
         "install -d /app/share/icons/hicolor/512x512/apps/",

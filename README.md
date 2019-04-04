@@ -3,7 +3,7 @@
 Flatpak Builder files for allowing Firestorm Viewer to run as a Flatpak.
 
 ### Broken
-* 32bit support (easy fix)
+* ~~32bit support (easy fix)~~
 * CEF (setuid sandbox?) so no web views
 * gconf (setting secondlife:// handler)
 * ~~Nvidia probably does not work.~~ It works! nVidia driver from Flathub must be installed (maybe preferable to use hosts instead?)
