@@ -21,6 +21,12 @@
     "--persist=.firestorm_x64",
     "--talk-name=org.freedesktop.Notifications"
   ],
+  "cleanup": [
+    "/share/man",
+    "/share/doc",
+    "/share/gtk-doc",
+    "/lib/pkgconfig"
+  ],
   "modules": [
     {
       "name": "firestormviewer",
