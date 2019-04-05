@@ -1,9 +1,0 @@
-[Desktop Entry]
-Exec=
-Icon=org.firestormviewer.FirestormViewer
-Comment=Client for accessing 3D virtual words
-Name=Firestorm Viewer
-StartupNotify=false
-Categories=Application;X-Internet;Network;
-Type=Application
-
