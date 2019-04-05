@@ -1,5 +1,10 @@
 # firestorm-flatpak
 
+<p align="center">
+<img src="https://git.smi.sh/Daniel/firestorm-flatpak/raw/master/org.firestormviewer.FirestormViewer.png"/>
+</p>
+
+
 Flatpak Builder files for allowing Firestorm Viewer to run as a Flatpak.
 
 ### Broken
@@ -27,5 +32,5 @@ sudo flatpak-builder --install --install-deps-from=flathub _build org.firestormv
 GNOME now also monitors and manages our flatpak too.
 
 <p align="center">
-<img src="https://i.imgur.com/m59sSOy.pn"/>
+<img src="https://i.imgur.com/m59sSOy.png"/>
 </p>
