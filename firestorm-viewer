@@ -1,0 +1,13 @@
+#!/bin/bash
+if gdbus introspect -e -d com.secondlife.ViewerAppAPIService -o /com/secondlife/ViewerAppAPI;
+then
+	echo "exist"
+	gdbus call  -e -d com.secondlife.ViewerAppAPIService  -o /com/secondlife/ViewerAppAPI  -m com.secondlife.ViewerAppAPI.GoSLURL "$1"
+else
+	echo "dont exist"
+	if [ -n "$1" ]; then
+		exec /app/firestorm/firestorm -url "$1"
+	else
+		exec /app/firestorm/firestorm 
+	fi
+fi

@@ -5,10 +5,10 @@ Flatpak Builder files for allowing Firestorm Viewer to run as a Flatpak.
 ### Broken
 * ~~32bit support (easy fix)~~
 * CEF (setuid sandbox?) so no web views
-* gconf (setting secondlife:// handler)
+* ~~gconf (setting secondlife:// handler)~~ fixed. using x-scheme-handler and gdbus instead.
 * ~~Nvidia probably does not work.~~ It works! nVidia driver from Flathub must be installed (maybe preferable to use hosts instead?)
 * Can't upload/download files outside of XDG directories (Documents etc).
-* launch_url.sh needs to be replaced with xdg-open
+* ~~launch_url.sh needs to be replaced with xdg-open~~ fixed
 
 ### Build & Install
 
