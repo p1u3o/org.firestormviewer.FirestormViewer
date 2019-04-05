@@ -26,4 +26,4 @@ sudo flatpak-builder --install --install-deps-from=flathub _build org.firestormv
 
 GNOME now also monitors and manages our flatpak too.
 
-![](https://i.imgur.com/3Bs7HOu.png)
+![](https://i.imgur.com/m59sSOy.png)
