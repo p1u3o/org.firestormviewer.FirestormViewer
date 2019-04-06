@@ -1,35 +1,36 @@
 # firestorm-flatpak
 
 <p align="center">
-<img src="https://git.smi.sh/Daniel/firestorm-flatpak/raw/master/org.firestormviewer.FirestormViewer.png"/>
+<img src="https://git.smi.sh/Daniel/firestorm-flatpak/raw/master/org.firestormviewer.FirestormViewer.svg"/>
 </p>
 
-
-Flatpak Builder files for allowing Firestorm Viewer to run as a Flatpak.
+**Unofficial** Flatpak for the Firestorm viewer.
 
 ### Broken
-* ~~32bit support (easy fix)~~
-* CEF (setuid sandbox?) so no web views
-* ~~gconf (setting secondlife:// handler)~~ fixed. using x-scheme-handler and gdbus instead.
-* ~~Nvidia probably does not work.~~ It works! nVidia driver from Flathub must be installed (maybe preferable to use hosts instead?)
-* Can't upload/download files outside of XDG directories (Documents etc).
-* ~~launch_url.sh needs to be replaced with xdg-open~~ fixed
+* CEF (setuid sandbox?). - No web views, external browser launching works.
+* Voice
+* ~~gconf (setting secondlife:// handler)~~ fixed using x-scheme-handler and gdbus.
+* ~~launch_url.sh does not work inside the sandbox~~ fixed using xdg-open.
+* Firestorm does not use xdg-directories correctly. ~/.firestorm is a sandbox violation so we bind mount it into ~/.var/app/org.firestormviewer.FirestormViewer
 
 ### Build & Install
 
 ```shell
-sudo flatpak-builder --install --install-deps-from=flathub _build org.firestormviewer.FirestormViewer.json --force-clean
+sudo flatpak-builder --system --install --install-deps-from=flathub _build org.firestormviewer.FirestormViewer.json --force-clean
 ```
 
 #### Notes
-* $HOME is not allowed because Firestorm does not use $XDG_DATA_DIRS, and we bind mount ~/.firestorm_x64 => ~/.var/app/org.firestormviewer.FirestormViewer
+* This is not affiliated with either Firestorm or Linden Labs.
 
-    Gotta keep that home directory squeaky clean :D. A potential alternative to this is using portals.
+* The viewer is relatively sandboxed and ~/.firestorm_x64 is bind mounted, meaning $HOME appears empty. You can still access ~/Documents, ~/Downloads etc.
 
-* This does not build the viewer. Integrating Flatpak into the build process of the viewer is a lot more additional work but at least we can experiment with how Firestorm handles being inside modern Linux sandbox. 
-* We kill the dependency issues that plague the Linux version of the viewer
+* This does not build the viewer. It pulls the Firestorm build for your architecture, verifies it and converts it into a Flatpak, with necessary changes to make it work in the sandbox.
 
-GNOME now also monitors and manages our flatpak too.
+* By using gdbus and x-scheme-handler, secondlife:// links "just work". This imho is much nicer than manually setting gsettings.
+
+* I made this because I was running a version of glib too new and Firestorm refused to run (glib has symbol versioning?). Rather than recompile it, Flatpak is the perfect way to provide a stable and sandboxed environment for any Linux application.
+
+GNOME integrates with Flatpak nicely. It tracks how much space Firestorm is using and even has a function to wipe the Firestorm settings. Windows and OS X don't even do this.
 
 <p align="center">
 <img src="https://i.imgur.com/m59sSOy.png"/>
