@@ -1,7 +1,7 @@
 # firestorm-flatpak
 
 <p align="center">
-<img src="https://git.smi.sh/Daniel/firestorm-flatpak/raw/master/org.firestormviewer.FirestormViewer.png"/>
+<img src="https://gitlab.com/plutoisaplanet/firestorm-flatpak/raw/master/org.firestormviewer.FirestormViewer.png"/>
 </p>
 
 **Unofficial** Flatpak for the Firestorm viewer.
