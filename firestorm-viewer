@@ -1,11 +1,10 @@
 #!/bin/bash
-if gdbus introspect -e -d com.secondlife.ViewerAppAPIService -o /com/secondlife/ViewerAppAPI;
-then
-	gdbus call  -e -d com.secondlife.ViewerAppAPIService  -o /com/secondlife/ViewerAppAPI  -m com.secondlife.ViewerAppAPI.GoSLURL "$1"
+if [ -n "$1" ]; then
+  if gdbus introspect -e -d com.secondlife.ViewerAppAPIService -o /com/secondlife/ViewerAppAPI; then
+	  gdbus call  -e -d com.secondlife.ViewerAppAPIService  -o /com/secondlife/ViewerAppAPI  -m com.secondlife.ViewerAppAPI.GoSLURL "$1"
+  else
+	  exec /app/firestorm/firestorm -url "$1"
+  fi
 else
-	if [ -n "$1" ]; then
-		exec /app/firestorm/firestorm -url "$1"
-	else
-		exec /app/firestorm/firestorm 
-	fi
+	exec /app/firestorm/firestorm 
 fi
