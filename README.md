@@ -3,7 +3,7 @@
 **Unofficial** Flatpak wrapper for Firestorm (https://www.firestormviewer.org/)
 
 ### Broken
-* Voice
+* ~~Voice~~ *- Fixed*
 
 ### Build & Install
 Add Flathub
@@ -28,3 +28,5 @@ This is located in ~/.var/app/org.firestormviewer.FirestormViewer/.firestorm_x64
 * Your home folder will appear empty because of the bind mount. Documents, Downloads, Pictures and Music will appear as normal.
 
 * This does not build the viewer itself, however it is planned.
+
+* Enabling voice for the first time will create a wine prefix to run the Win32 Vivox plugin.

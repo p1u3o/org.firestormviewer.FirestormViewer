@@ -1,7 +1,9 @@
 #!/bin/bash
 APPPATH=/app/firestorm
-FIRESTORMBIN=$APPPATH/bin/do-not-directly-run-firestorm-bin
 
+# Start the binary directly and avoid the upstream launcher script. It's pointless inside a Flatpak because the environment is always the same.
+FIRESTORMBIN=$APPPATH/bin/do-not-directly-run-firestorm-bin
+PARAMS="--set FSLinuxEnableWin32VoiceProxy TRUE --setdefault FSLinuxEnableWin32VoiceProxy TRUE"
 
 if [ ! -f $XDG_DATA_HOME/.warned ]; then
   /usr/bin/zenity --warning --width 600 --text  "This is an unofficial Flatpak package of the Firestorm Viewer, originally created by the Firestorm Project\nThere is no support provided with this software, any issues you find should be filed against this the issue tracker for this Flatpak package instead.\n\nThis software is not provided or supported by Linden Lab, the makers of Second Life. \nYou can read the third-party viewer policy at https://secondlife.com/corporate/tpv.php" --ok-label="I understand"
@@ -10,9 +12,11 @@ fi
 
 ## - Avoids an often-buggy X feature that doesn't really benefit us anyway.
 export SDL_VIDEO_X11_DGAMOUSE=0
+
 export FS_CEF_PRELOAD="libcef.so"
 export LD_LIBRARY_PATH="/app/firestorm/lib:/app/lib:/usr/lib"
 export SAVED_LD_LIBRARY_PATH="/app/lib:/usr/lib"
+export __GL_THREADED_OPTIMIZATIONS=1
 
 cd $APPPATH
 
@@ -20,8 +24,8 @@ if [ -n "$1" ]; then
   if gdbus introspect -e -d com.secondlife.ViewerAppAPIService -o /com/secondlife/ViewerAppAPI; then
     gdbus call  -e -d com.secondlife.ViewerAppAPIService  -o /com/secondlife/ViewerAppAPI  -m com.secondlife.ViewerAppAPI.GoSLURL "$1"
   else
-    exec $FIRESTORMBIN -url "$1"
+    exec $FIRESTORMBIN -url "$1" $PARAMS
   fi
 else
-  exec $FIRESTORMBIN "${ARGS[@]}"
+  exec $FIRESTORMBIN "${ARGS[@]}" $PARAMS
 fi
