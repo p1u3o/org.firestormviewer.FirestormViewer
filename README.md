@@ -11,6 +11,11 @@ Add Flathub
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
+Grab dependencies
+```shell
+flatpak install org.freedesktop.Sdk.Compat.i386 org.freedesktop.Sdk.Extension.toolchain-i386
+```
+
 ```shell
 flatpak-builder --user --install --install-deps-from=flathub _build org.firestormviewer.FirestormViewer.json --force-clean
 ```
