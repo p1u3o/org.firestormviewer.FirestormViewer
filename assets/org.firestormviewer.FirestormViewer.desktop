@@ -7,6 +7,6 @@ StartupNotify=true
 Categories=Application;X-Internet;Network;Game;
 Type=Application
 Terminal=false
-StartupWMClass=do-not-directly-run-firestorm-bin"
+StartupWMClass=do-not-directly-run-firestorm-bin
 MimeType=x-scheme-handler/secondlife;
 

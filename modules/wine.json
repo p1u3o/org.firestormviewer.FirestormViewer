@@ -18,6 +18,11 @@
       }
     }
   },
+  "config-opts": [
+    "--without-vkd3d",
+    "--without-xinput",
+    "--without-xinput2"
+  ],
   "sources":[
     {
       "type":"archive",
