@@ -16,7 +16,6 @@ export SDL_VIDEO_X11_DGAMOUSE=0
 export FS_CEF_PRELOAD="libcef.so"
 export LD_LIBRARY_PATH="/app/firestorm/lib:/app/lib:/usr/lib"
 export SAVED_LD_LIBRARY_PATH="/app/lib:/usr/lib"
-export __GL_THREADED_OPTIMIZATIONS=1
 
 cd $APPPATH
 

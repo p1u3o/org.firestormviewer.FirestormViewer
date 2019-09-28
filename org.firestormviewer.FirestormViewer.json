@@ -29,6 +29,9 @@
     "/lib/pkgconfig",
     "/lib/debug"
   ],
+  "build-options":{
+    "strip":true
+  },
   "add-extensions":{
     "org.freedesktop.Platform.Compat.i386":{
       "directory":"lib/i386-linux-gnu",
