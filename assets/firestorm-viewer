@@ -23,9 +23,10 @@ for i in {0..9}; do
     test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;
 done
 
+
 ## - Avoids an often-buggy X feature that doesn't really benefit us anyway.
 export SDL_VIDEO_X11_DGAMOUSE=0
-
+export LD_PRELOAD="$LD_PRELOAD:/app/lib/libgamemodeauto.so.0"
 export FS_CEF_PRELOAD="libcef.so"
 export LD_LIBRARY_PATH="/app/firestorm/lib:/app/lib:/usr/lib"
 export SAVED_LD_LIBRARY_PATH="/app/lib:/usr/lib"

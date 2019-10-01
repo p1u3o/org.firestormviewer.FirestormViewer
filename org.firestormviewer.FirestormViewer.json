@@ -50,19 +50,34 @@
     "modules/wine.json",
     {
       "name":"libnotify",
-      "cleanup":[
-        "/bin"
-      ],
       "config-opts":[
         "--disable-static",
         "--disable-tests",
         "--disable-introspection"
+      ],
+      "cleanup":[
+        "/bin"
       ],
       "sources":[
         {
           "type":"archive",
           "url":"https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.7.tar.xz",
           "sha256":"9cb4ce315b2655860c524d46b56010874214ec27e854086c1a1d0260137efc04"
+        }
+      ]
+    },
+    {
+      "name":"gamemode",
+      "buildsystem": "meson",
+      "config-opts":[
+        "-Dwith-systemd=false",
+        "-Dwith-daemon=false"
+      ],
+      "sources":[
+        {
+          "type":"git",
+          "url":"https://github.com/FeralInteractive/gamemode.git",
+          "commit":"107d469ff2a7cf075cc7f48dd6c3790e87392cd0"
         }
       ]
     },
