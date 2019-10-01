@@ -20,7 +20,8 @@
     "--persist=.firestorm_x64",
     "--persist=.wine",
     "--talk-name=org.freedesktop.Notifications",
-    "--own-name=com.secondlife.ViewerAppAPIService"
+    "--own-name=com.secondlife.ViewerAppAPIService",
+    "--filesystem=xdg-run/app/com.discordapp.Discord:create"
   ],
   "cleanup":[
     "/share/man",
@@ -73,8 +74,8 @@
         {
           "type":"file",
           "dest-filename":"viewer.tar.xz",
-          "url":"http://downloads.firestormviewer.org/linux/Phoenix_Firestorm-releasex64_x86_64_6.2.4.57588.tar.xz",
-          "sha256":"b2899152d880a50e3a4fd8f0f1ab035d9190d9293fa4f23cda82957a8083c27d"
+          "url":"http://downloads.firestormviewer.org/linux/Phoenix_Firestorm-Releasex64_x86_64_6.3.2.58052.tar.xz",
+          "sha256":"c80e16541697aa32925781b28cd58545645cb5a2a814d5f296a39a73a03d38c1"
         },
         {
           "type":"file",
