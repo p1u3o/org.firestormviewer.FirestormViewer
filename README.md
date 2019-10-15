@@ -13,7 +13,7 @@ flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flath
 ```
 Grab dependencies
 ```shell
-flatpak install org.freedesktop.Sdk.Compat.i386 org.freedesktop.Sdk.Extension.toolchain-i386
+flatpak install org.freedesktop.Sdk.Compat.i386 org.freedesktop.Sdk.Extension.toolchain-i386 org.freedesktop.Platform.Compat.i386
 ```
 
 ```shell
