@@ -1,0 +1,24 @@
+{
+    "name": "boost",
+    "buildsystem": "simple",
+    "cleanup": [ "/include", "*.pyc", "*.a" ],
+    "sources": [
+        {
+	    "type": "archive",
+	    "url": "https://bitbucket.org/lindenlab/3p-boost/get/72f6361db5d1.zip",
+	    "sha512": "5d666c7c40a5843974f8c0bee4b43ef88aa369871c990c3cae171a8fd5a916b30ac7968934cc122864b34b56b90fa895f9309a270c2b2cee78692d67ea600a6d",
+	    "dest": "3p-boost"
+	},
+	{
+	    "type": "script",
+	    "commands":  [
+			"set -e",
+			"pushd 3p-boost/boost",
+			"./bootstrap.sh --prefix=${FLATPAK_DEST}",
+			"./b2 -j${FLATPAK_BUILDER_N_JOBS} cxxflags=-fPIC cflags=-fPIC link=static --with-context --with-coroutine --with-date_time --with-filesystem --with-iostreams --with-program_options --with-regex --with-signals --with-system --with-thread --with-wave --layout=tagged --prefix=${FLATPAK_DEST} install"
+	    ],
+	    "dest-filename": "build.sh"
+	}
+    ],
+    "build-commands":[ "sh ./build.sh" ]
+}

@@ -1,0 +1,29 @@
+{
+    "name": "openal",
+    "buildsystem": "simple",
+    "cleanup": [ "/include", "*.pyc", "*.a" ],
+    "sources": [
+        {
+	    "type": "archive",
+	    "url": "https://bitbucket.org/lindenlab/p64_3p-openal/get/e4970cda7539.zip",
+	    "sha512": "d02b7208c72707fd75f6de9a7719c3a5ffe7aa52292ca70f2185ee932dc2c63b47311f08aa1c5c0fc0764a98b66bab31b5923fb3ab1b08fbec996c2be5a2d0ef",
+	    "dest": "3p-openal"
+	},
+	{
+	    "type": "script",
+	    "commands":  [
+			"set -e",
+			"pushd 3p-openal",
+			"mkdir build && cd build",
+			"cmake ../openal-soft -DCMAKE_INSTALL_PREFIX=${FLATPAK_DEST}",
+			"make -j${FLATPAK_BUILDER_N_JOBS}",
+			"make install",
+			"cd .. && rm -rf build && mkdir build && cd build",
+			"cmake ../freealut -DCMAKE_INSTALL_PREFIX=${FLATPAK_DEST}",
+			"make -j${FLATPAK_BUILDER_N_JOBS} && make install"
+	    ],
+	    "dest-filename": "build.sh"
+	}
+    ],
+    "build-commands":[ "sh ./build.sh" ]
+}

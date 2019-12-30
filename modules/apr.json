@@ -1,0 +1,30 @@
+{
+    "name": "aprs",
+    "buildsystem": "simple",
+    "cleanup": [ "/include", "*.pyc", "*.a" ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://bitbucket.org/lindenlab/3p-apr_suite/get/2f6d20e48d05.zip",
+            "sha512": "f85507b37d5d566cda68ad4b6e73bc2c62edc510a52e3a2ef0ebbe700658071519b50fe6980b1b97cfcf91d49de9011e48884de62a3d0f49b1d57f487bb31c68",
+            "dest": "3p-apr_suite"
+        },
+        {
+            "type": "script",
+            "commands":  [
+                "set -e",
+                "pushd 3p-apr_suite",
+                "pushd apr",
+                "./configure --prefix=${FLATPAK_DEST}",
+                "make -j${FLATPAK_BUILDER_N_JOBS}",
+                "make install",
+                "popd",
+                "pushd apr-util",
+                "./configure --prefix=${FLATPAK_DEST} --with-apr=${FLATPAK_DEST}",
+                "make -j${FLATPAK_BUILDER_N_JOBS} && make install"
+            ],
+            "dest-filename": "build.sh"
+        }
+    ],
+    "build-commands":[ "sh ./build.sh" ]
+}
