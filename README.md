@@ -15,6 +15,8 @@ git clone --recursive https://github.com/p1u3o/org.firestormviewer.FirestormView
 sudo flatpak-builder --system --install --install-deps-from=flathub _build org.firestormviewer.FirestormViewer.json --force-clean
 ```
 
+Go make a coffee, compiling Wine will take a little while.
+
 ### FAQ
 
 #### Where can I find my .firestorm_x64 folder?
