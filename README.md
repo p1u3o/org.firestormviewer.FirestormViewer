@@ -5,19 +5,14 @@
 ### Broken
 * ~~Voice~~ *- Fixed*
 
-### Build & Install
-Add Flathub
-```shell
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-```
-Grab dependencies
-```shell
-flatpak install org.freedesktop.Sdk.Compat.i386 org.freedesktop.Sdk.Extension.toolchain-i386 org.freedesktop.Platform.Compat.i386
-```
+### Build and Install
+Run this line by line.
 
 ```shell
-flatpak-builder --user --install --install-deps-from=flathub _build org.firestormviewer.FirestormViewer.json --force-clean
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.freedesktop.Platform.Compat.i386//19.08 org.freedesktop.Sdk.Extension.toolchain-i386//19.08 org.freedesktop.Sdk.Compat.i386//19.08
+git clone --recursive https://github.com/p1u3o/org.firestormviewer.FirestormViewer && cd org.firestormviewer.FirestormViewer
+sudo flatpak-builder --system --install --install-deps-from=flathub _build org.firestormviewer.FirestormViewer.json --force-clean
 ```
 
 ### FAQ
