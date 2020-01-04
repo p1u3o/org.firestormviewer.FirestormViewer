@@ -18,12 +18,6 @@ sudo flatpak-builder --system --install --install-deps-from=flathub _build org.f
 
 Go make a coffee, compiling Wine will take a little while.
 
-### FAQ
-
-#### Where can I find my .firestorm_x64 folder?
-
-This is located in ~/.var/app/org.firestormviewer.FirestormViewer/.firestorm_x64/
-
 
 #### Notes
 
