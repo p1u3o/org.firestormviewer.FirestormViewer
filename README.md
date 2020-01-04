@@ -4,6 +4,7 @@
 
 ### Broken
 * ~~Voice~~ *- Fixed*
+* ~~Discord~~ *- Fixed*
 
 ### Build and Install
 Run this line by line.
@@ -25,10 +26,7 @@ This is located in ~/.var/app/org.firestormviewer.FirestormViewer/.firestorm_x64
 
 
 #### Notes
-* This is not affiliated with either The Firestorm Project or Linden Labs.
 
-* Your home folder will appear empty because of the bind mount. Documents, Downloads, Pictures and Music will appear as normal.
+* This branch does not build the viewer from source, there is a compile branch but it lacks FMOD.
 
-* This does not build the viewer itself, however it is planned.
-
-* Enabling voice for the first time will create a wine prefix to run the Win32 Vivox plugin.
+* Enabling voice for the first time will create a wine prefix to run the Windows Vivox voice plugin.

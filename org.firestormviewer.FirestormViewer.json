@@ -13,12 +13,7 @@
     "--share=network",
     "--allow=multiarch",
     "--device=dri",
-    "--filesystem=xdg-documents",
-    "--filesystem=xdg-download",
-    "--filesystem=xdg-music",
-    "--filesystem=xdg-pictures",
-    "--persist=.firestorm_x64",
-    "--persist=.wine",
+    "--filesystem=home",
     "--talk-name=org.freedesktop.Notifications",
     "--own-name=com.secondlife.ViewerAppAPIService",
     "--filesystem=xdg-run/app/com.discordapp.Discord:create"
