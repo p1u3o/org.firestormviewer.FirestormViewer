@@ -1,7 +1,7 @@
 {
     "app-id":"org.firestormviewer.FirestormViewer",
     "runtime":"org.freedesktop.Platform",
-    "runtime-version":"24.08",
+    "runtime-version":"25.08",
     "sdk":"org.freedesktop.Sdk",
     "command":"firestorm-viewer",
     "separate-locales":false,
@@ -53,8 +53,8 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.3.tar.xz",
-                    "sha256":"ee8f3ef946156ad3406fdf45feedbdcd932dbd211ab4f16f75eba4f36fb2f6c0"
+                    "url":"https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.6.tar.xz",
+                    "sha256":"c5540aaefb60e1d63b1c587c05f2284ebe72ece7d0c0e5e4a778cfd5844b6b58"
                 }
             ]
         },
@@ -75,27 +75,27 @@
                 {
                     "type":"shell",
                     "commands":[
-                        "autoreconf -fi"
+                        "GTKDOCIZE=echo autoreconf -fi"
                     ]
                 }
             ]
         },
-        {
-            "name":"ubuntu-libcypto",
-            "buildsystem":"simple",
-            "sources":[
-                {
-                    "type":"file",
-                    "url":"http://mirrors.edge.kernel.org/ubuntu/pool/main/libx/libxcrypt/libcrypt1_4.4.27-1_amd64.deb",
-                    "sha256":"3fa566e9f861a08736cbc5a97562d9d6e4f0c00450fbeafcb6d7583423b04a98"
-                }
-            ],
-            "build-commands":[
-                  "ar x libcrypt1_4.4.27-1_amd64.deb",
-                  "tar -xvf data.tar.zst",
-                  "cp lib/x86_64-linux-gnu/* /app/lib/"
-            ]
-        },
+        //{
+        //    "name":"ubuntu-libcypto",
+        //    "buildsystem":"simple",
+        //    "sources":[
+        //        {
+        //            "type":"file",
+        //            "url":"http://mirrors.edge.kernel.org/ubuntu/pool/main/libx/libxcrypt/libcrypt1_4.4.27-1_amd64.deb",
+        //            "sha256":"3fa566e9f861a08736cbc5a97562d9d6e4f0c00450fbeafcb6d7583423b04a98"
+        //        }
+        //    ],
+        //    "build-commands":[
+        //          "ar x libcrypt1_4.4.27-1_amd64.deb",
+        //          "tar -xvf data.tar.zst",
+        //           "cp lib/x86_64-linux-gnu/* /app/lib/"
+        //    ]
+        //},
         {
             "name":"firestorm",
             "buildsystem":"simple",
@@ -103,9 +103,9 @@
                 {
                     "type":"extra-data",
                     "filename":"viewer.tar.xz",
-                    "url":"https://downloads.firestormviewer.org/preview/linux/Phoenix-Firestorm-Betax64_AVX2-7-2-0-78879.tar.xz",
-                    "sha256":"3cca3cccc902837f8adf5c7c258b06ba0fdc3a6d0e78d9b638f664f6a97dca9b",
-                    "size": 186803312
+                    "url":"https://downloads.firestormviewer.org/preview/linux/Phoenix-Firestorm-Betax64_AVX2-7-2-2-79281.tar.xz",
+                    "sha256":"b611a872b6a51122761e70b72a77e0f9ae740fdeaea3331bd6b407c0a545f81d",
+                    "size": 185095908
                 },
                 {
                     "type":"script",
