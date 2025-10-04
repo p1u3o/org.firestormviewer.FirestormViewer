@@ -103,9 +103,9 @@
                 {
                     "type":"extra-data",
                     "filename":"viewer.tar.xz",
-                    "url":"https://downloads.firestormviewer.org/preview/linux/Phoenix-Firestorm-Betax64_AVX2-7-2-2-79281.tar.xz",
-                    "sha256":"b611a872b6a51122761e70b72a77e0f9ae740fdeaea3331bd6b407c0a545f81d",
-                    "size": 185095908
+                    "url":"https://downloads.firestormviewer.org/preview/linux/Phoenix-Firestorm-Betax64_AVX2-7-2-2-79356.tar.xz",
+                    "sha256":"590b50030c8dacd6bce20a8b597c269b814e75d5353aab6a07977dd684d29626",
+                    "size": 185280392
                 },
                 {
                     "type":"script",
