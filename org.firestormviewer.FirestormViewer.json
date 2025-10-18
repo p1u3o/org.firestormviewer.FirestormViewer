@@ -105,7 +105,7 @@
                     "filename":"viewer.tar.xz",
                     "url":"https://downloads.firestormviewer.org/preview/linux/Phoenix-Firestorm-Betax64_AVX2-7-2-2-79407.tar.xz",
                     "sha256":"c06dc6e423637a1b25f42824f928e0c96656e4f4743b5094e5e4829555d7130b",
-                    "size": 186665128
+                    "size": 185202488
                 },
                 {
                     "type":"script",
