@@ -103,9 +103,9 @@
                 {
                     "type":"extra-data",
                     "filename":"viewer.tar.xz",
-                    "url":"https://downloads.firestormviewer.org/preview/linux/Phoenix-Firestorm-Betax64_AVX2-7-2-2-79407.tar.xz",
-                    "sha256":"c06dc6e423637a1b25f42824f928e0c96656e4f4743b5094e5e4829555d7130b",
-                    "size": 185202488
+                    "url":"https://downloads.firestormviewer.org/preview/linux/Phoenix-Firestorm-Betax64_AVX2-7-2-2-79429.tar.xz",
+                    "sha256":"4491aa6333b3ad51bcccb5a0a67f646344d9935aaf793f2e80db30464ae9bde4",
+                    "size": 185244268
                 },
                 {
                     "type":"script",
@@ -134,9 +134,9 @@
                 },
                 {
                     "type":"file",
-                    "url":"https://downloads.firestormviewer.org/preview/linux/Phoenix-Firestorm-Betax64_AVX2-7-2-2-79429.tar.xz",
-                    "sha256":"4491aa6333b3ad51bcccb5a0a67f646344d9935aaf793f2e80db30464ae9bde4",
-                    "size": 185244268
+                    "url":"https://raw.githubusercontent.com/FirestormViewer/phoenix-firestorm/master/indra/newview/skins/default/textures/firestorm_icon.png",
+                    "sha256":"a2e3ec61c05b675e2a256be463342ea2b18feefaf4434879d03ddd055f213b1b",
+                    "dest-filename":"org.firestormviewer.FirestormViewer.png"
                 }
             ],
             "build-commands":[
